@@ -7,9 +7,16 @@
 </head>
 <body ng-controller="MainController">
 
+ <div ng-repeat="user in users" ng-class="{favorite: user.isFavorite}">
+   <img ng-src="{{user.avatar}}" />
+   <h2>User Name</h2>
+   <div> {{ user.first_name | uppercase }} {{user.last_name | uppercase}}</div>
+   <br/>
+   <button ng-click="toggleFavorite(user.id)">+</button>
 
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
      <script src="app.js"></script>
      <script src="controller.js"></script>
+     <script src="service.js"></script>
 </body>
 </html>
